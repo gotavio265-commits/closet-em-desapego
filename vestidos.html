@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vestidos | Closet em Desapego</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header id="header">
+    <div class="logo">Closet em Desapego</div>
+
+    <!-- BOTÃO MOBILE -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+    <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="sobre.html">Sobre</a>
+    </nav>
+</header>
+
+<section class="topo-produtos">
+    <h1>Vestidos</h1>
+    <p>Confira nossos modelos disponíveis</p>
+</section>
+
+<section class="produtos">
+    <div class="grid-produtos">
+
+        <!-- PRODUTO 1 -->
+        <div class="card-produto">
+            <img src="https://cdn.awsli.com.br/600x1000/2701/2701668/produto/255629613/vestido_midi_de_crepe_estampado_la_dolce_vita_floral_limonada_pink_4491_1_56ea7b-v532a0jrd7.webp">
+            
+            <div class="info">
+                <h2>Vestido Floral</h2>
+                <p>R$ 59,90</p>
+                <p>Tamanho: G</p>
+
+                <a href="#" onclick="comprarProduto('vestido1')" class="btn-whatsapp">
+                    Comprar no WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- PRODUTO 2 -->
+        <div class="card-produto">
+            <img src="https://adaptive-images.uooucdn.com.br/ik-seo/tr:w-1100,h-1594,c-at_max,pr-true,q-90/a22425-ogxytnphqt0/pv/7b/eb/8c/41be53adfc57d7a9d659e34e74/vestido-longo-busto-no-preto-1-large-2.jpg">
+            
+            <div class="info">
+                <h2>Vestido Preto</h2>
+                <p>R$ 60,00</p>
+                <p>Tamanho: G</p>
+
+                <a href="#" onclick="comprarProduto('vestido2')" class="btn-whatsapp">
+                    Comprar no WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- PRODUTO 3 -->
+        <div class="card-produto">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lqy3rbo4c7bhe9">
+            
+            <div class="info">
+                <h2>Vestido Azul</h2>
+                <p>R$ 60,00</p>
+                <p>Tamanho: P</p>
+
+                <a href="#" onclick="comprarProduto('vestido3')" class="btn-whatsapp">
+                    Comprar no WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- PRODUTO 4 -->
+        <div class="card-produto">
+            <img src="https://powerlook.vtexassets.com/arquivos/ids/176830/Vestido_sante_amarelo_1.jpg?v=638278090716800000">
+            
+            <div class="info">
+                <h2>Vestido Amarelo</h2>
+                <p>R$ 60,00</p>
+                <p>Tamanho: G</p>
+
+                <a href="#" onclick="comprarProduto('vestido4')" class="btn-whatsapp">
+                    Comprar no WhatsApp
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SCRIPT HEADER -->
+<script>
+window.addEventListener("scroll", function() {
+    let header = document.getElementById("header");
+    header.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
+
+<!-- SCRIPT MENU -->
+<script>
+function toggleMenu(){
+    document.querySelector(".menu").classList.toggle("active");
+    document.querySelector(".menu-toggle").classList.toggle("active");
+}
+</script>
+
+<!-- SCRIPT WHATSAPP -->
+<script>
+function comprarProduto(produtoId) {
+
+    let produtos = {
+        "vestido1": { nome: "Vestido Floral", preco: "R$ 59,90", tamanho: "G" },
+        "vestido2": { nome: "Vestido Preto", preco: "R$ 60,00", tamanho: "G" },
+        "vestido3": { nome: "Vestido Azul", preco: "R$ 60,00", tamanho: "P" },
+        "vestido4": { nome: "Vestido Amarelo", preco: "R$ 60,00", tamanho: "G" }
+    };
+
+    let produto = produtos[produtoId];
+
+    let mensagem = `Olá! Tenho interesse no ${produto.nome} - Tamanho: ${produto.tamanho} - Valor: ${produto.preco}`;
+    let link = "https://wa.me/5511984618783?text=" + encodeURIComponent(mensagem);
+
+    window.open(link, "_blank");
+}
+</script>
+
+</body>
+</html>

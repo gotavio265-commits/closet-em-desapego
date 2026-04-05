@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Produtos | Closet em Desapego</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header id="header">
+    <div class="logo">Closet em Desapego</div>
+
+    <!-- BOTÃO MOBILE -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+    <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="sobre.html">Sobre</a>
+    </nav>
+</header>
+
+<!-- TÍTULO -->
+<section class="topo-produtos">
+    <h1>Nossos Produtos</h1>
+    <p>Escolha sua categoria favorita</p>
+</section>
+
+<!-- GRID DE PRODUTOS -->
+<section class="produtos">
+
+    <div class="grid-produtos">
+
+        <a href="vestidos.html" class="card-produto">
+            <img src="https://lojabrunamodas.com/cdn/shop/products/S449dd7eb97244d1c8173ab92120df882P_1024x.jpg?v=1745515657" alt="Vestidos">
+            <div class="info">
+                <h2>Vestidos</h2>
+            </div>
+        </a>
+
+        <a href="blazers.html" class="card-produto">
+            <img src="https://www.bellibrasil.com/cdn/shop/files/Blazer_Feminino_de_Alfaiataria_Forrado.webp?v=1743862037" alt="Blazers">
+            <div class="info">
+                <h2>Blazers</h2>
+            </div>
+        </a>
+
+        <a href="camisetas.html" class="card-produto">
+            <img src="https://cdn.shopify.com/s/files/1/0045/3699/1778/files/camisa-social-feminina-seda-bolsos-branco_2_ae686461-ccd6-4a99-944c-46c607264958.webp?v=1748536952" alt="Camisas">
+            <div class="info">
+                <h2>Camisas</h2>
+            </div>
+        </a>
+
+        <a href="sapatos.html" class="card-produto">
+            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800" alt="Sapatos">
+            <div class="info">
+                <h2>Sapatos</h2>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- SCRIPT HEADER -->
+<script>
+window.addEventListener("scroll", function() {
+    let header = document.getElementById("header");
+    header.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
+
+<!-- SCRIPT MENU -->
+<script>
+function toggleMenu(){
+    document.querySelector(".menu").classList.toggle("active");
+    document.querySelector(".menu-toggle").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sobre | Closet em Desapego</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="pagina-sobre">
+
+<header id="header">
+    <div class="logo">Closet em Desapego</div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+    <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="sobre.html">Sobre</a>
+    </nav>
+</header>
+
+<section class="sobre">
+
+    <div class="sobre-bg"></div>
+
+    <div class="sobre-container">
+
+        <div class="sobre-box">
+
+            <h1 class="titulo-principal">Sobre a Loja</h1>
+
+            <h2 class="subtitulo">Quem está por trás</h2>
+
+            <p>
+                Me chamo <strong>Ana Carolina</strong>, criadora do Closet em Desapego.
+                Nasci em Ferraz de Vasconcelos e cresci nesse lugar, onde carrego
+                lembranças especiais da minha infância.
+            </p>
+
+            <p>
+                Meus pais sempre foram amorosos, gentis e dedicados, e me ensinaram
+                valores que levo comigo até hoje.
+            </p>
+
+            <p>
+                Mesmo enfrentando dificuldades, nunca desisti. Nos momentos mais
+                desafiadores, encontrei força e paz em Deus, que me ajudou a superar
+                feridas e continuar seguindo em frente.
+            </p>
+
+            <p>
+                Hoje sou uma mulher grata, dedicada e feliz, que busca fazer o bem
+                e dar o seu melhor em tudo o que faz.
+            </p>
+
+            <h2 class="subtitulo">Propósito do Closet</h2>
+
+            <p>
+                Este projeto nasceu com muito carinho para ajudar uma pessoa especial
+                a desapegar de peças que já não fazem mais parte da sua história,
+                mas que podem fazer parte da sua.
+            </p>
+
+            <p class="destaque">
+                Cada peça aqui carrega valor, estilo e uma nova oportunidade
+                de brilhar em uma mulher incrível como você ✨
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+window.addEventListener("scroll", function() {
+    let header = document.getElementById("header");
+    header.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+
+
+function toggleMenu(){
+    document.querySelector(".menu").classList.toggle("active");
+    document.querySelector(".menu-toggle").classList.toggle("active");
+}
+
+</script>
+</script>
+
+</body>
+</html>

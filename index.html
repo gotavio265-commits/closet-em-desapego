@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Closet em Desapego</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header id="header">
+    <div class="logo">Closet em Desapego</div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+    <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="sobre.html">Sobre</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="inicio">
+
+
+<!-- IMAGEM FALLBACK -->
+<img src="https://images.unsplash.com/photo-1470509037663-253afd7f0f51?q=80&w=1974"
+     class="hero-fallback"
+     alt="Campo de girassóis ao vento">
+
+<!-- VIDEO -->
+<video autoplay muted loop playsinline class="video-bg">
+    <source src="https://cdn.coverr.co/videos/coverr-sunflowers-in-the-wind-5176/1080p.mp4" type="video/mp4">
+</video>
+
+<div class="hero-content">
+    <h1>Seu estilo, sua essência, seu closet dos sonhos</h1>
+    <p>Descubra peças únicas com elegância e autenticidade</p>
+
+    <a href="produtos.html" class="btn">VER PRODUTOS</a>
+</div>
+
+
+</section>
+
+<!-- SCRIPT HEADER -->
+
+<script>
+window.addEventListener("scroll", function() {
+    let header = document.getElementById("header");
+    header.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
+
+<!-- ANIMAÇÃO AO ENTRAR -->
+
+<script>
+const elementos = document.querySelectorAll(".hero-content, .mini-card");
+
+window.addEventListener("load", () => {
+    elementos.forEach((el, i) => {
+        setTimeout(() => {
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+        }, i * 200);
+    });
+});
+</script>
+
+<script>
+function toggleMenu(){
+    document.querySelector(".menu").classList.toggle("active");
+    document.querySelector(".menu-toggle").classList.toggle("active");
+}
+</script>
+
+
+</body>
+</html>
