@@ -557,8 +557,8 @@ nav a:hover::after {
         height: 100vh;
 
         /* 🔥 NOVO DESIGN LUXO */
-        background: #111; /* preto elegante */
-
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
         display: flex;
         flex-direction: column;
         justify-content: center;
