@@ -34,7 +34,6 @@ header.scrolled {
     background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
 }
 
-/* LOGO */
 .logo {
     font-family: 'Cinzel', serif;
     font-size: 22px;
@@ -314,7 +313,7 @@ header.scrolled .menu a {
 }
 
 .produtos {
-    padding: 100px 60px;
+    padding: 60px 60px 100px;
     background: #FDF6E3;
 }
 
@@ -324,16 +323,23 @@ header.scrolled .menu a {
     gap: 35px;
 }
 
+/* ========================= */
+/* CARD PRODUTO              */
+/* ========================= */
+
 .card-produto {
     position: relative;
-    overflow: hidden;
     border-radius: 20px;
     text-decoration: none;
     background: #fff;
     box-shadow: 0 20px 50px rgba(0,0,0,0.1);
     transition: 0.4s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
+/* BORDA DOURADA */
 .card-produto::before {
     content: "";
     position: absolute;
@@ -345,40 +351,70 @@ header.scrolled .menu a {
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
+    z-index: 1;
 }
 
+/* IMAGEM - MOSTRA ROUPA INTEIRA */
 .card-produto img {
     width: 100%;
-    height: 340px;
-    object-fit: cover;
+    height: 420px;
+    object-fit: contain;        /* roupa inteira visível */
+    background-color: #f5f0ea;  /* fundo bege suave */
+    padding: 10px;
     transition: 0.5s ease;
 }
 
 .card-produto:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15);
 }
 
 .card-produto:hover img {
-    transform: scale(1.1);
-    filter: brightness(0.7);
+    transform: scale(1.04);
 }
 
+/* INFO */
 .card-produto .info {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 30px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.6));
+    padding: 20px 25px 25px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .card-produto h2 {
-    color: #F4C430;
+    color: #2c2c2c;
     font-family: 'Cinzel', serif;
-    font-size: 22px;
-    letter-spacing: 2px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
 }
 
+.info p {
+    color: #666;
+    font-size: 14px;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 11px 18px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background: #1ebe5d;
+    transform: scale(1.02);
+}
+
+/* BRILHO */
 .card-produto::after {
     content: "";
     position: absolute;
@@ -386,38 +422,14 @@ header.scrolled .menu a {
     left: -100%;
     width: 50%;
     height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.05), transparent);
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
     transform: skewX(-25deg);
+    z-index: 2;
 }
 
 .card-produto:hover::after {
     left: 120%;
     transition: 0.8s;
-}
-
-.btn-whatsapp {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background: #25D366;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.btn-whatsapp:hover {
-    background: #1ebe5d;
-}
-
-.info p {
-    color: #fff;
-    font-size: 14px;
-}
-
-.info p[id^="estoque"] {
-    font-weight: bold;
 }
 
 /* ========================= */
@@ -446,9 +458,7 @@ header.scrolled .menu a {
     .hero h1 { font-size: 32px; }
     .hero p  { font-size: 15px; }
 
-    /* ================================= */
-    /* DROPDOWN - CAI DO HEADER          */
-    /* ================================= */
+    /* DROPDOWN - CAI DO HEADER */
     .menu {
         position: absolute;
         top: 100%;
@@ -510,16 +520,20 @@ header.scrolled .menu a {
 
     /* PRODUTOS */
     .produtos {
-        padding: 40px 15px;
+        padding: 30px 15px 60px;
     }
 
     .grid-produtos {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
     }
 
     .card-produto img {
-        height: 260px;
+        height: 220px;
+    }
+
+    .card-produto h2 {
+        font-size: 14px;
     }
 
     .topo-produtos h1 {
