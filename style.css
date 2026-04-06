@@ -334,52 +334,45 @@ header.scrolled .menu a {
     background: #fff;
     box-shadow: 0 20px 50px rgba(0,0,0,0.1);
     transition: 0.4s ease;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
-}
 
-/* BORDA DOURADA */
-.card-produto::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 20px;
-    padding: 1px;
-    background: linear-gradient(45deg, #F4C430, #D4AF37);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    z-index: 1;
-}
-
-/* IMAGEM - MOSTRA ROUPA INTEIRA */
-.card-produto img {
-    width: 100%;
-    height: 420px;
-    object-fit: contain;        /* roupa inteira visível */
-    background-color: #f5f0ea;  /* fundo bege suave */
-    padding: 10px;
-    transition: 0.5s ease;
+    /* BORDA DOURADA VIA OUTLINE — sem usar ::after */
+    outline: 1px solid rgba(212, 175, 55, 0.4);
 }
 
 .card-produto:hover {
     transform: translateY(-8px);
     box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+    outline: 1.5px solid rgba(212, 175, 55, 0.8);
+}
+
+/* IMAGEM - ROUPA INTEIRA */
+.card-produto img {
+    width: 100%;
+    height: 420px;
+    object-fit: contain;
+    background-color: #f5f0ea;
+    padding: 10px;
+    border-radius: 20px 20px 0 0;
+    transition: 0.5s ease;
+    display: block;
 }
 
 .card-produto:hover img {
-    transform: scale(1.04);
+    transform: scale(1.03);
 }
 
-/* INFO */
+/* INFO - SEMPRE VISÍVEL E CLICÁVEL */
 .card-produto .info {
     padding: 20px 25px 25px;
     background: #fff;
+    border-radius: 0 0 20px 20px;
     display: flex;
     flex-direction: column;
     gap: 4px;
+    position: relative;
+    z-index: 5;
 }
 
 .card-produto h2 {
@@ -395,45 +388,27 @@ header.scrolled .menu a {
     font-size: 14px;
 }
 
+/* BOTÃO WHATSAPP */
 .btn-whatsapp {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 11px 18px;
+    display: block;
+    margin-top: 14px;
+    padding: 13px 18px;
     background: #25D366;
     color: white;
     text-decoration: none;
     border-radius: 8px;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 14px;
     text-align: center;
     transition: 0.3s;
-    
     position: relative;
     z-index: 10;
-
+    cursor: pointer;
 }
 
 .btn-whatsapp:hover {
     background: #1ebe5d;
     transform: scale(1.02);
-}
-
-/* BRILHO */
-.card-produto::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
-    transform: skewX(-25deg);
-    z-index: 2;
-}
-
-.card-produto:hover::after {
-    left: 120%;
-    transition: 0.8s;
 }
 
 /* ========================= */
@@ -442,14 +417,12 @@ header.scrolled .menu a {
 
 @media (max-width: 768px) {
 
-    /* HEADER */
     header {
         padding: 15px 20px;
         justify-content: center;
         overflow: visible;
     }
 
-    /* BOTÃO ☰ APARECE */
     .menu-toggle {
         display: flex;
         position: absolute;
@@ -458,22 +431,19 @@ header.scrolled .menu a {
         transform: translateY(-50%);
     }
 
-    /* HERO */
     .hero h1 { font-size: 32px; }
     .hero p  { font-size: 15px; }
 
-    /* DROPDOWN - CAI DO HEADER */
+    /* DROPDOWN MOBILE */
     .menu {
         position: absolute;
         top: 100%;
         left: 50%;
         transform: translateX(-50%) translateY(-10px);
-
         width: 90%;
         flex-direction: column;
         align-items: center;
         padding: 10px 0;
-
         background: rgba(20, 20, 20, 0.97);
         backdrop-filter: blur(20px);
         border-radius: 0 0 20px 20px;
@@ -482,7 +452,6 @@ header.scrolled .menu a {
         border-right: 1px solid rgba(212,175,55,0.2);
         border-bottom: 1px solid rgba(212,175,55,0.2);
         box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-
         opacity: 0;
         pointer-events: none;
         transition: all 0.35s ease;
@@ -522,7 +491,7 @@ header.scrolled .menu a {
         color: #F4C430;
     }
 
-    /* PRODUTOS */
+    /* PRODUTOS MOBILE */
     .produtos {
         padding: 30px 15px 60px;
     }
@@ -540,6 +509,15 @@ header.scrolled .menu a {
         font-size: 14px;
     }
 
+    .card-produto .info {
+        padding: 12px 12px 16px;
+    }
+
+    .btn-whatsapp {
+        font-size: 12px;
+        padding: 10px 8px;
+    }
+
     .topo-produtos h1 {
         font-size: 28px;
     }
@@ -547,8 +525,4 @@ header.scrolled .menu a {
     .topo-produtos p {
         font-size: 14px;
     }
-}
-.info {
-    position: relative;
-    z-index: 10;
 }
