@@ -41,7 +41,8 @@
                 <h2>Vestido Floral</h2>
                 <p>R$ 59,90</p>
                 <p>Tamanho: G</p>
-                <a href="javascript:void(0)" onclick="comprarProduto('vestido1')" class="btn-whatsapp">
+                <a href="https://wa.me/5511984618783?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Vestido%20Floral%20-%20Tamanho%3A%20G%20-%20Valor%3A%20R%24%2059%2C90"
+                   target="_blank" class="btn-whatsapp">
                     Comprar no WhatsApp
                 </a>
             </div>
@@ -54,7 +55,8 @@
                 <h2>Vestido Preto</h2>
                 <p>R$ 60,00</p>
                 <p>Tamanho: G</p>
-                <a href="javascript:void(0)" onclick="comprarProduto('vestido2')" class="btn-whatsapp">
+                <a href="https://wa.me/5511984618783?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Vestido%20Preto%20-%20Tamanho%3A%20G%20-%20Valor%3A%20R%24%2060%2C00"
+                   target="_blank" class="btn-whatsapp">
                     Comprar no WhatsApp
                 </a>
             </div>
@@ -67,7 +69,8 @@
                 <h2>Vestido Azul</h2>
                 <p>R$ 60,00</p>
                 <p>Tamanho: P</p>
-                <a href="javascript:void(0)" onclick="comprarProduto('vestido3')" class="btn-whatsapp">
+                <a href="https://wa.me/5511984618783?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Vestido%20Azul%20-%20Tamanho%3A%20P%20-%20Valor%3A%20R%24%2060%2C00"
+                   target="_blank" class="btn-whatsapp">
                     Comprar no WhatsApp
                 </a>
             </div>
@@ -80,7 +83,8 @@
                 <h2>Vestido Amarelo</h2>
                 <p>R$ 60,00</p>
                 <p>Tamanho: G</p>
-                <a href="javascript:void(0)" onclick="comprarProduto('vestido4')" class="btn-whatsapp">
+                <a href="https://wa.me/5511984618783?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Vestido%20Amarelo%20-%20Tamanho%3A%20G%20-%20Valor%3A%20R%24%2060%2C00"
+                   target="_blank" class="btn-whatsapp">
                     Comprar no WhatsApp
                 </a>
             </div>
@@ -107,32 +111,6 @@ function toggleMenu() {
 function fecharMenu() {
     document.querySelector(".menu").classList.remove("active");
     document.querySelector(".menu-toggle").classList.remove("active");
-}
-</script>
-
-<!-- SCRIPT WHATSAPP -->
-<script>
-function comprarProduto(produtoId) {
-
-    let produtos = {
-        "vestido1": { nome: "Vestido Floral",   preco: "R$ 59,90", tamanho: "G" },
-        "vestido2": { nome: "Vestido Preto",     preco: "R$ 60,00", tamanho: "G" },
-        "vestido3": { nome: "Vestido Azul",      preco: "R$ 60,00", tamanho: "P" },
-        "vestido4": { nome: "Vestido Amarelo",   preco: "R$ 60,00", tamanho: "G" }
-    };
-
-    let produto = produtos[produtoId];
-    let numero = "5511984618783";
-    let mensagem = `Olá! Tenho interesse no ${produto.nome} - Tamanho: ${produto.tamanho} - Valor: ${produto.preco}`;
-    let texto = encodeURIComponent(mensagem);
-
-    /* Detecta se é celular ou computador */
-    let isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    let link = isMobile
-        ? `https://wa.me/${numero}?text=${texto}`
-        : `https://web.whatsapp.com/send?phone=${numero}&text=${texto}`;
-
-    window.open(link, "_blank");
 }
 </script>
 
