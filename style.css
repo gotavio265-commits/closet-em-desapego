@@ -24,14 +24,12 @@ header {
     background: rgba(0,0,0,0.25);
     backdrop-filter: blur(10px);
     z-index: 1000;
-
     transition: all 0.4s ease;
 }
 
 header.scrolled {
     background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
 }
-
 
 /* LOGO */
 .logo {
@@ -195,7 +193,6 @@ nav a:hover::after {
 
 /* RESPONSIVO */
 @media(max-width:768px){
-
     .hero h1 { font-size:32px; }
     .hero p { font-size:15px; }
 
@@ -218,6 +215,7 @@ nav a:hover::after {
         font-size: 14px;
     }
 }
+
 /* ========================= */
 /* SOBRE */
 /* ========================= */
@@ -292,10 +290,6 @@ nav a:hover::after {
 .topo-produtos h1 {
     font-family: 'Cinzel', serif;
     font-size: 40px;
-    color: #2c2c2c;
-}
-
-.topo-produtos h1 {
     color: #F4C430;
     letter-spacing: 2px;
 }
@@ -308,7 +302,6 @@ nav a:hover::after {
     padding: 100px 60px;
     background: #FDF6E3;
 }
-
 
 .grid-produtos {
     display: grid;
@@ -323,10 +316,8 @@ nav a:hover::after {
     text-decoration: none;
     background: #fff;
     box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-    transition: 0.4s;
+    transition: 0.4s ease;
 }
-
-
 
 /* BORDA CORRIGIDA */
 .card-produto::before {
@@ -336,10 +327,8 @@ nav a:hover::after {
     border-radius: 20px;
     padding: 1px;
     background: linear-gradient(45deg, #F4C430, #D4AF37);
-
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-
     -webkit-mask-composite: xor;
     mask-composite: exclude;
 }
@@ -349,16 +338,17 @@ nav a:hover::after {
     width: 100%;
     height: 340px;
     object-fit: cover;
-    transition: 0.6s;
+    transition: 0.5s ease;
 }
 
 /* HOVER */
 .card-produto:hover {
-    transform: translateY(-12px) scale(1.02);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.2);
 }
 
 .card-produto:hover img {
-    transform: scale(1.15);
+    transform: scale(1.1);
     filter: brightness(0.7);
 }
 
@@ -377,60 +367,6 @@ nav a:hover::after {
     font-family: 'Cinzel', serif;
     font-size: 22px;
     letter-spacing: 2px;
-}
-
-/* GIRASSOL */
-.card-produto::after {
-    content: "🌻";
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    font-size: 22px;
-    animation: girar 6s linear infinite;
-}
-
-@keyframes girar {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.btn-whatsapp {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background: #25D366;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.btn-whatsapp:hover {
-    background: #1ebe5d;
-}
-
-/* ========================= */
-/* EFEITO PREMIUM PRODUTOS */
-/* ========================= */
-
-.card-produto {
-    transition: 0.4s ease;
-}
-
-/* ZOOM + ELEVAÇÃO */
-.card-produto:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 60px rgba(0,0,0,0.2);
-}
-
-/* ZOOM NA IMAGEM */
-.card-produto img {
-    transition: 0.5s ease;
-}
-
-.card-produto:hover img {
-    transform: scale(1.1);
 }
 
 /* BRILHO SUAVE */
@@ -456,12 +392,27 @@ nav a:hover::after {
     transition: 0.8s;
 }
 
+.btn-whatsapp {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background: #1ebe5d;
+}
+
 /* ========================= */
-/* RESPONSIVO MOBILE */
+/* RESPONSIVO MOBILE PRODUTOS */
 /* ========================= */
 
 @media (max-width: 768px) {
-
     .produtos {
         padding: 40px 15px;
     }
@@ -482,13 +433,8 @@ nav a:hover::after {
     .topo-produtos p {
         font-size: 14px;
     }
-
-    header {
-        padding: 15px 20px;
-    }
-
-    
 }
+
 .info p {
     color: #fff;
     font-size: 14px;
@@ -498,145 +444,12 @@ nav a:hover::after {
     font-weight: bold;
 }
 
-@media (max-width: 768px){
+/* ========================= */
+/* BOTÃO MENU ☰              */
+/* ========================= */
 
-    header {
-        flex-direction: column;
-        align-items: center;
-        padding: 15px 20px;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    nav a {
-        margin: 5px 0;
-        font-size: 14px;
-    }
-
-}
-/* BOTÃO MENU */
 .menu-toggle {
     display: none;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-}
-
-/* ===== DESKTOP ===== */
-.menu {
-    display: flex;
-    gap: 25px;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px){
-
-    /* BOTÃO ☰ */
-    .menu-toggle {
-        display: block;
-        font-size: 28px;
-        color: white;
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    /* MENU LATERAL BONITO */
-    @media (max-width: 768px){
-
-    .menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 75%;
-        height: 100vh;
-
-        /* 🔥 NOVO DESIGN LUXO */
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(15px);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        transition: right 0.5s ease;
-        z-index: 999;
-
-        box-shadow: -10px 0 40px rgba(0,0,0,0.6);
-    }
-
-    .menu.active {
-        right: 0;
-    }
-
-    .menu a {
-        color: #fff;
-        font-size: 22px;
-        margin: 18px 0;
-        font-weight: 400;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        transition: 0.3s;
-    }
-
-    /* EFEITO PREMIUM */
-    .menu a:hover {
-        color: #D4AF37; /* dourado */
-        transform: scale(1.05);
-    }
-
-}
-
-    /* MENU ABERTO */
-    .menu.active {
-        right: 0;
-    }
-
-    /* LINKS */
-    .menu a {
-        color: #2c2c2c;
-        font-size: 20px;
-        margin: 15px 0;
-        text-decoration: none;
-        font-weight: 500;
-        letter-spacing: 1px;
-        transition: 0.3s;
-    }
-
-    /* HOVER */
-    .menu a:hover {
-        color: white;
-        transform: scale(1.1);
-    }
-
-}
-/* MOBILE AJUSTE HEADER */
-@media (max-width: 768px){
-
-    header {
-        position: relative;
-        display: flex;
-        justify-content: center; /* mantém logo no centro */
-        align-items: center;
-    }
-
-    /* BOTÃO ☰ NO CANTO ESQUERDO */
-    .menu-toggle {
-        position: absolute;
-        left: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-
-}
-/* ===== BOTÃO ANIMADO ☰ → ✖ ===== */
-.menu-toggle {
     width: 30px;
     height: 22px;
     cursor: pointer;
@@ -648,7 +461,7 @@ nav a:hover::after {
     width: 100%;
     background: white;
     margin: 5px 0;
-    transition: right 0.5s ease;
+    transition: 0.4s ease;
 }
 
 /* ANIMAÇÃO PARA X */
@@ -663,3 +476,85 @@ nav a:hover::after {
 .menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
 }
+
+/* ===== DESKTOP ===== */
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    /* BOTÃO ☰ VISÍVEL */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1001;
+    }
+
+    /* HEADER MOBILE */
+    header {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 20px;
+    }
+
+    /* ================================= */
+    /* 🌸 MENU LATERAL - BORDA ROSA      */
+    /* ================================= */
+    .menu {
+        position: fixed;
+        top: 50%;
+        right: -100%;
+        transform: translateY(-50%);
+
+        width: 75%;
+        height: auto;
+        padding: 50px 30px;
+
+        /* 🌸 GRADIENTE ROSA COM CANTOS ARREDONDADOS */
+        background: linear-gradient(135deg, #f093fb, #f5576c, #c471ed);
+        border-radius: 12px 28px; /* assimétrico igual à imagem */
+        box-shadow: 0 20px 60px rgba(240, 100, 200, 0.5);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        transition: right 0.5s ease;
+        z-index: 999;
+    }
+
+    /* MENU ABERTO */
+    .menu.active {
+        right: 5%;
+    }
+
+    /* LINKS DO MENU */
+    .menu a {
+        color: #fff;
+        font-size: 22px;
+        margin: 18px 0;
+        font-weight: 400;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    /* HOVER DOURADO */
+    .menu a:hover {
+        color: #fff3b0;
+        transform: scale(1.05);
+    }
+}
+
+
+
