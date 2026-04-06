@@ -23,14 +23,14 @@
         <span></span>
         <span></span>
     </div>
-</header>
 
-<!-- MENU FORA DO HEADER -->
-<nav class="menu">
-    <a href="index.html" onclick="toggleMenu()">Início</a>
-    <a href="produtos.html" onclick="toggleMenu()">Produtos</a>
-    <a href="sobre.html" onclick="toggleMenu()">Sobre</a>
-</nav>
+    <!-- MENU DENTRO DO HEADER -->
+    <nav class="menu">
+        <a href="index.html" onclick="fecharMenu()">Início</a>
+        <a href="produtos.html" onclick="fecharMenu()">Produtos</a>
+        <a href="sobre.html" onclick="fecharMenu()">Sobre</a>
+    </nav>
+</header>
 
 <!-- HERO -->
 <section class="hero" id="inicio">
@@ -63,7 +63,6 @@ window.addEventListener("scroll", function() {
 
 <script>
 const elementos = document.querySelectorAll(".hero-content, .mini-card");
-
 window.addEventListener("load", () => {
     elementos.forEach((el, i) => {
         setTimeout(() => {
@@ -75,9 +74,14 @@ window.addEventListener("load", () => {
 </script>
 
 <script>
-function toggleMenu(){
+function toggleMenu() {
     document.querySelector(".menu").classList.toggle("active");
     document.querySelector(".menu-toggle").classList.toggle("active");
+}
+
+function fecharMenu() {
+    document.querySelector(".menu").classList.remove("active");
+    document.querySelector(".menu-toggle").classList.remove("active");
 }
 </script>
 
