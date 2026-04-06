@@ -548,3 +548,7 @@ header.scrolled .menu a {
         font-size: 14px;
     }
 }
+.info {
+    position: relative;
+    z-index: 10;
+}
